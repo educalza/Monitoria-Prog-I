@@ -18,15 +18,24 @@ int main()
     fgets(str, MAX, stdin);
 
     char strCriptografada[MAX];
+    int count=0;
     for(int i=0; str[i]!='\0'; i++){
         if(str[i] >= 'a' && str[i] <= 'z'){
-
+            int aux = str[i]-'a';
+            strCriptografada[i] = 'z'-aux;
         }
         else if(str[i] >= 'A' && str[i] <= 'Z'){
-
+            int aux = str[i]-'A';
+            strCriptografada[i] = 'Z'-aux;
         }
         else{
             strCriptografada[i] = str[i];
         }
+        count++;
     }
+
+    strCriptografada[count] = '\0';
+    puts(strCriptografada);
+
+    return 0;
 }
