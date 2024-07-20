@@ -4,53 +4,29 @@ Por exemplo, se a string digitada for adoro programar em c a sa´ıda deve ser z
 vn x.*/
 
 #include <stdio.h>
+#include <string.h>
 #define N 26
 #define MAX 255
 
-int main(){
-
-    char alfabetoAoContrario[N];
-    char alfabetoNormal[N];
-
-    char alfabeto2 = 'z';
-    char alfabeto3 = 'a';
-
-    for (int i = 0; i < N; i++){
-        alfabetoAoContrario[i] = alfabeto2;
-        alfabeto2--;
-        alfabetoNormal[i] = alfabeto3;
-        alfabeto3++;
-    }
+int main()
+{
 
     char str[MAX];
 
-    printf("Digite sua frase: ");
+    printf("Digite uma frase: ");
+    fflush(stdin);
     fgets(str, MAX, stdin);
 
-    int count = 0;
-    for (int i = 0; i < MAX; i++){
-        if (str[i] == '\0'){
-            break;
+    char strCriptografada[MAX];
+    for(int i=0; str[i]!='\0'; i++){
+        if(str[i] >= 'a' && str[i] <= 'z'){
+
         }
-        count++;
-    }
+        else if(str[i] >= 'A' && str[i] <= 'Z'){
 
-    char straux[count];
-    for (int i = 0; i < count; i++){
-        int indiceDeTroca = 0;
-        for (int j = 0; j < N; j++){
-            if (str[i] == alfabetoNormal[j]){
-                indiceDeTroca = 26-j;
-                break;
-            }
         }
-        straux[i] = alfabetoAoContrario[indiceDeTroca];
+        else{
+            strCriptografada[i] = str[i];
+        }
     }
-
-    printf("\n");
-    for(int i=0; i<count; i++){
-        printf("%c", straux[i]);
-    }
-
-    return 0;
 }

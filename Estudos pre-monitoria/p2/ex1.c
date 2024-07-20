@@ -36,6 +36,7 @@ int main(){
     float soma = 0;
     int i = 0;
     int escolha1 = 0, escolha2 = 0, escolha3 = 0, escolha4 = 0;
+    
     for (int i = 0; i < n; i++){
         float preco = 0;
         switch (inscricoes[i]){
