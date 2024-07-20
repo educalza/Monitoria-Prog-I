@@ -9,7 +9,7 @@ int main(){
     char str[N];
 
     printf("Digite a string: ");
-    /* setbuf(stdin, NULL); */
+    setbuf(stdin, NULL);
     fgets(str, N, stdin);
 
     int count=0;
