@@ -1,73 +1,35 @@
-/* Em um evento, existem quatro opções de inscrição em minicursos, conforme mostra a Tabela 1.
-Faça um prgrama que receba inscrição de vários alunos com o número de matrícula, a opção de inscrição
-(1, 2, 3, 4) e se é aluno de escola pública (S - sim ou N - Não); neste caso, aluno oriundo de escola
-pública têm direito a um desconto de 50% sobre a taxa de inscrição. O programa deverá mostrar:
+/*Faça um programa que receba uma string de no máximo 255 caracteres e, em seguida implemente funções que:
 
-a) o valor a ser pago por cada aluno;
-b) o total arrecadado com os minicursos; e
-c) o total de alunos matriculados em cada opção de minicursos.*/
+a) Receba como parâmetro a string, calcula e retorna o total de palavras contidas na string.
+b) Receba como parâmetro a string e imprime a última palavra da string.
+c) Receba como parâmetro a string, calculae retorna a porcentagem de vogais em relação ao total de caracteres na string.
+d) Receba como parâmetro a string e dois valores representando duas posições na string, mostre a substring (caracteres) contida entre os dois valores informados pelo usuárioo.
+e) Receba como parâmetro a string e o valor de deslocamento 'n' e retorna a string por um caractere deslocado 'n' posições no alfabeto, onde 'n' é um número inteiro fornecido pelo usuário.
+Por exemplo, se string = "programa em c" e n=5, então string criptografada = "uwtlwfrf jr h". 
+
+OBS: Não usar a biblioteca <string.h>*/
 
 #include <stdio.h>
-#include <stdlib.h>
+#define N 255
+
+int aCalculaLetra(char str[]){
+    int count=0;
+    while(str[count]!='\0'){
+        count++;
+    }
+    return count;
+}
+
+void bImprimeUltimPalavraString(char str[]){
+    for(int )
+}
 
 int main(){
 
-    int n = 0;
+    char str[N];
 
-    printf("Digite o numero de alunos: ");
-    scanf("%d", &n);
-    printf("\n");
+    printf("Digite a string: ");
+    fgets(str, N, stdin);
 
-    int Alunos[n];
-    int inscricoes[n];
-    char publicPrivada[n];
-    for (int i = 0; i < n; i++){
-        printf("Digite a matricula do aluno: ");
-        scanf("%d", &Alunos[i]);
-
-        printf("Digite a inscricao do aluno %d: ", Alunos[i]);
-        scanf("%d", &inscricoes[i]);
-
-        printf("O aluno %d eh de escola publica ou privada?(S-sim ou N-nao): ", Alunos[i]);
-        setbuf(stdin, NULL);
-        scanf("%c", &publicPrivada[i]);
-    }
-
-    float soma = 0;
-    int i = 0;
-    int escolha1 = 0, escolha2 = 0, escolha3 = 0, escolha4 = 0;
-    
-    for (int i = 0; i < n; i++){
-        float preco = 0;
-        switch (inscricoes[i]){
-        case 1:
-            preco = 50;
-            escolha1++;
-            break;
-        case 2:
-            preco = 65;
-            escolha2++;
-            break;
-        case 3:
-            preco = 80;
-            escolha3++;
-            break;
-        case 4:
-            preco = 95;
-            escolha4++;
-            break;
-        default:
-            printf("Inscricao invalida do aluno %d.\n", Alunos[i]);
-            continue;
-        }
-        if (publicPrivada[i] == 'S'){
-            preco = preco * 0.5;
-        }
-        printf("Aluno %d deve pagar %.2f reais.\n", Alunos[i], preco);
-        soma += preco;
-    }
-
-    printf("\nTotal arrecadado: %.2f\n", soma);
-    printf("Total de alunos em cada inscricao: \nEscolha1 = %d\nEscolha2 = %d\nEscolha3 = %d\nEscolha4 = %d\n", escolha1, escolha2, escolha3, escolha4);
-    return 0;
+    printf("Numero de letras na strin: %d\n", aCalculaLetra(str)-1);
 }
