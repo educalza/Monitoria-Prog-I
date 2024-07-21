@@ -75,7 +75,7 @@ void eCriptografarString(char str[], int cripto){
     }
     else{
         int count=0;
-        while(str[count]){
+        while(str[count]!='\0'){
             count++;
         }
         char stringCriptografada[count];
